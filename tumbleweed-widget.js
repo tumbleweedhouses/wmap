@@ -16,7 +16,6 @@ if (website_id == "tumbleweed") {
 var locations = [
   ['Seattle,+WA', 47.665764,-122.313366, 0, 'seattle', 'left'],
   ['Berkeley,+CA', 37.868078,-122.254915, 0, 'berkeley', 'left'],
-  ['Los+Angeles,+CA', 34.068836,-118.448346, 0, 'los-angeles', 'left'],
   ['Boulder,+CO', 40.004098,-105.268786, 0, 'boulder', 'left'],
   ['Santa+Fe,+NM', 35.66053,-105.938995, 0, 'santa-fe', 'left'],
   ['Austin,+TX', 30.355178,-97.733122, 0, 'austin', 'left'],
