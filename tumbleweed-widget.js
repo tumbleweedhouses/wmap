@@ -73,4 +73,4 @@ function initialize() {
             'callback=initialize';
         document.body.appendChild(script);
       }
-      windows.onload=loadScript();
+      loadScript();
