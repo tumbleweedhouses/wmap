@@ -53,6 +53,5 @@ if (website_id == "tumbleweed") {document.location ="http://www.tumbleweedhouses
 })(marker2, i));
   }
 }
-var script3 = document.createElement('script');script3.type = 'text/javascript';script3.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +'callback=initialize';document.body.appendChild(script3); 
 dropdowncontent.init("houses", "right-bottom", 500, 'mouseover');
 dropdowncontent.init("workshops", "right-bottom", 500, 'mouseover')
