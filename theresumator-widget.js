@@ -57,4 +57,3 @@ var script3 = document.createElement('script');script3.type = 'text/javascript';
 
 dropdowncontent.init("houses", "right-bottom", 500, 'mouseover');
 dropdowncontent.init("workshops", "right-bottom", 500, 'mouseover');
-if (navigator.appVersion.indexOf('Win')!=-1) {document.write('<style>#subcontent {left:109px !important;top:165px !important;}</style>');} 
