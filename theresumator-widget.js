@@ -58,8 +58,8 @@ var script3 = document.createElement('script');script3.type = 'text/javascript';
 dropdowncontent.init("houses", "right-bottom", 500, 'mouseover');
 dropdowncontent.init("workshops", "right-bottom", 500, 'mouseover');
 if (navigator.appVersion.indexOf('Win')!=-1) {
-  document.getElementById('wrapper').innerHTML+='<style> #subcontent {left:109px !important;top:165px !important;} #subcontent2 {left:63px !important; top:165px !important;} </style>';
+  document.write('<style> #subcontent {left:109px !important;top:165px !important;} #subcontent2 {left:63px !important; top:165px !important;} </style>');
 	} 
 else {
-	document.getElementById('wrapper').innerHTML+='<style> #subcontent {left:117px !important;top:165px !important;} #subcontent2 {left:58px !important; top:165px !important;} </style>'
+	document.write('<style> #subcontent {left:117px !important;top:165px !important;} #subcontent2 {left:58px !important; top:165px !important;} </style>')
 	}
