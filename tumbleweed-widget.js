@@ -2,6 +2,7 @@ document.write('<div id="mapwrapper" style="position:relative; width:700px; heig
 document.write('<div id="map" style="width: 690px; height: 415px; border:5px solid #7f4936; position:absolute;"></div>');
 document.write('<img id="headerimg" style="position:absolute; top:5px; left:170px; z-index:100" src="http://cdn.shopify.com/s/files/1/0150/9532/files/mheader_2.png?2407" width="362" height="27" >');
 document.write('</div>');
+
 if (website_id == "tumbleweed") {
       document.getElementById('mapwrapper').style.width='700px';
 	  document.getElementById('map').style.width='690px';
@@ -28,31 +29,33 @@ var locations = [
 ];
 
 var styles = [ { "featureType": "administrative.country", "elementType": "labels", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.province", "elementType": "labels", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.locality", "stylers": [ { "visibility": "off" } ] },{ "featureType": "landscape", "stylers": [ { "visibility": "on" } ] } ]
-var map;
+var map,map2;
 var locationinfo;
-function initialize() {
-  var mapOptions =  {
+
+  function initialize() {
+	  
+    var mapOptions =  {
 	zoom: 4,
 	center: new google.maps.LatLng(39.828175, -98.5795),
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	styles: styles
   };
-  map = new google.maps.Map(document.getElementById("map"), mapOptions); 
-  if (document.getElementById("map2") != null) map2 = new google.maps.Map(document.getElementById("map2"), mapOptions); 
-  var marker, marker2, i;
-  for (i = 0; i < locations.length; i++) {
-	  var image = new google.maps.MarkerImage("https://chart.googleapis.com/chart?chst=d_simple_text_icon_"+locations[i][5]+"&chld="+locations[i][0]+"|14|655945|glyphish_house|16|5b484a|f1f4e9", null, null, new google.maps.Point(locations[i][3],11));//0,11
-	marker = new google.maps.Marker({
+	
+   map = new google.maps.Map(document.getElementById("map"), mapOptions);
+   if (document.getElementById("map2") != null) { map2 = new google.maps.Map(document.getElementById("map2"), mapOptions)};
+   for (i = 0; i < locations.length; i++) { 
+   var image = new google.maps.MarkerImage("https://chart.googleapis.com/chart?chst=d_simple_text_icon_"+locations[i][5]+"&chld="+locations[i][0]+"|14|655945|glyphish_house|16|5b484a|f1f4e9", null, null, new google.maps.Point(locations[i][3],11));//0,11
+   marker = new google.maps.Marker({
 	  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 	  map: map,
 	  title: locations[i][0],
-	  icon: image,
+	  icon: image
 	});
 	if (document.getElementById("map2") != null) marker2 = new google.maps.Marker({
 	  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 	  map: map2,
 	  title: locations[i][0],
-	  icon: image,
+	  icon: image
 	});
 	google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	  return function() {
@@ -64,13 +67,15 @@ function initialize() {
 		 if (website_id == "tumbleweed") {document.location ="http://www.tumbleweedhouses.com/products/"+locations[i][4]} else { document.location="http://www.avantlink.com/click.php?tt=cl&mi=10985&pw=" + website_id + "&url=http://www.tumbleweedhouses.com/products/"+locations[i][4]}
 	  }
 	})(marker2, i)); 
+   }; 
   }
-}
-	  function loadScript() {
+  
+
+function loadScript() {
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
             'callback=initialize';
         document.body.appendChild(script);
       }
-      loadScript();
+loadScript();
